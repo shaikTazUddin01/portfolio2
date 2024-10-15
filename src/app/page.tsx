@@ -1,8 +1,12 @@
+import About from "@/components/ui/About";
+import HeroArea from "@/components/ui/HeroArea";
 
 export default function Home() {
   return (
 <div>
-  <h1 className="bg-red-500">home</h1>
+  {/* hero area */}
+  <HeroArea/>
+  <About/>
 </div>
   );
 }
