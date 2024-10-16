@@ -1,4 +1,5 @@
 import About from "@/components/ui/About";
+import Contact from "@/components/ui/Contact";
 import Experience from "@/components/ui/Experience";
 import HeroArea from "@/components/ui/HeroArea";
 import MySkills from "@/components/ui/MySkills";
@@ -15,6 +16,7 @@ export default function Home() {
   <MySkills/>
   {/* <Experience/> */}
   <Portfolio/>
+  <Contact/>
   </div>
 </div>
   );
