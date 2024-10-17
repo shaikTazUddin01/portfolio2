@@ -14,8 +14,8 @@ export default function MainNav() {
       <NavbarContent justify="end">
        
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
+          <Button as={Link} className="text-white bg-[#3a3a3a88]" href="#" variant="bordered">
+            Contact
           </Button>
         </NavbarItem>
       </NavbarContent>

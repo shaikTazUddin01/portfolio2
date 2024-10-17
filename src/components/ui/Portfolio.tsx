@@ -8,22 +8,22 @@ const Portfolio = () => {
       <h1 className="text-4xl text-center">PortFolio</h1>
       <div className="grid grid-cols-3 gap-3 mt-5">
         <div className="border-2">
-        <Image src={p1.src} className="rounded-none"/>
+        <Image src={p1.src} className="rounded-none" alt="portfolio"/>
         </div>
         <div className="border-2">
-        <Image src={p1.src} className="rounded-none"/>
+        <Image src={p1.src} className="rounded-none" alt="portfolio"/>
         </div>
         <div className="border-2">
-        <Image src={p1.src} className="rounded-none"/>
+        <Image src={p1.src} className="rounded-none" alt="portfolio"/>
         </div>
         <div className="border-2">
-        <Image src={p1.src} className="rounded-none"/>
+        <Image src={p1.src} className="rounded-none" alt="portfolio"/>
         </div>
         <div className="border-2">
-        <Image src={p1.src} className="rounded-none"/>
+        <Image src={p1.src} className="rounded-none" alt="portfolio"/>
         </div>
         <div className="border-2">
-        <Image src={p1.src} className="rounded-none"/>
+        <Image src={p1.src} className="rounded-none" alt="portfolio"/>
         </div>
         
       </div>

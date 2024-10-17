@@ -8,7 +8,7 @@ const Experience = () => {
       
       <div className="relative">
         {/* Vertical Line for Timeline */}
-        <div className="absolute w-1 left-1/2 transform -translate-x-1/2 h-full bg-primaryColor"></div>
+        <div className="absolute w-[2px] left-1/2 transform -translate-x-1/2 h-full bg-primaryColor"></div>
         
         {/* JSC Section */}
         <div className="mb-10 flex items-start w-full pt-4">
@@ -19,8 +19,9 @@ const Experience = () => {
             <FaCircle className="text-white bg-primaryColor rounded-full p-[1px]" size={17} />
           </div>
           <div className="w-1/2 pl-0">
-            <h1 className="text-xl font-semibold">JSC In 2014</h1>
-            <p>Border Guard Public School, Jessore</p>
+            <h1 className="text-xl font-semibold">In 2014 (JSC)</h1>
+            <p>Junior School Certificate</p>
+            <p className="text-sm text-[#808080]">Border Guard Public School, Jessore</p>
           </div>
         </div>
 

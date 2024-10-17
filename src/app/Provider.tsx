@@ -1,4 +1,4 @@
-import FooterNav from "@/components/navbar/FooterNav";
+// import FooterNav from "@/components/navbar/FooterNav";
 import React, { ReactNode } from "react";
 import MainNav from "@/components/navbar/MainNav";
 const Provider = ({ children }: { children: ReactNode }) => {

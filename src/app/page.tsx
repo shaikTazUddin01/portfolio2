@@ -9,10 +9,12 @@ export default function Home() {
   return (
 <div>
   {/* hero area */}
+  <div className="">
   <HeroArea/>
-  <div className="max-w-7xl mx-auto">
+  </div>
 
   <About/>
+  <div className="max-w-7xl mx-auto">
   <Experience/>
   <MySkills/>
   <Portfolio/>
