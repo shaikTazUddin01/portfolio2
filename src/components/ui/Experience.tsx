@@ -1,72 +1,92 @@
 import React from "react";
 import { FaCircle } from "react-icons/fa";
+import SectionTitle from "../SectionTitle/Title";
 
 const Experience = () => {
   return (
-    <div className="max-w-7xl mx-auto py-10">
-      <h1 className="text-4xl font-bold text-center pb-5">Experience</h1>
-      
-      <div className="relative">
-        {/* Vertical Line for Timeline */}
-        <div className="absolute w-[2px] left-1/2 transform -translate-x-1/2 h-full bg-primaryColor"></div>
-        
-        {/* JSC Section */}
-        <div className="mb-10 flex items-start w-full pt-4">
-          <div className="w-1/2">
-            
-          </div>
-          <div className="relative w-10 mt-1 flex justify-center ">
-            <FaCircle className="text-white bg-primaryColor rounded-full p-[1px]" size={17} />
-          </div>
-          <div className="w-1/2 pl-0">
-            <h1 className="text-xl font-semibold">In 2014 (JSC)</h1>
-            <p>Junior School Certificate</p>
-            <p className="text-sm text-[#808080]">Border Guard Public School, Jessore</p>
-          </div>
-        </div>
+    <div className="relative bg-cover">
+      <div className="max-w-7xl mx-auto py-20">
+        {/* <h1 className="text-4xl font-bold text-center pb-5">Experience</h1> */}
+        <SectionTitle
+          headerText="Experience"
+          title="Educational Qualification"
+        />
 
-        {/* SSC Section */}
-        <div className="mb-10 flex items-start w-full">
-          <div className="w-1/2 text-right">
-           
-            <h1 className="text-xl font-semibold">SSC In 2017</h1>
-            <p>Border Guard Public School, Jessore</p>
-          </div>
-          <div className="relative w-10 flex justify-center mt-1">
-          <FaCircle className="text-white bg-primaryColor rounded-full p-[1px]" size={17} />
-          </div>
-          <div className="w-1/2">
-          </div>
-        </div>
-        {/* JSC Section */}
-        <div className="mb-10 flex items-start w-full pt-4">
-          <div className="w-1/2">
-            
-          </div>
-          <div className="relative w-10 mt-1 flex justify-center ">
-            <FaCircle className="text-white bg-primaryColor rounded-full p-[1px]" size={17} />
-          </div>
-          <div className="w-1/2 pl-0">
-            <h1 className="text-xl font-semibold">JSC In 2014</h1>
-            <p>Border Guard Public School, Jessore</p>
-          </div>
-        </div>
+        <div className="relative mt-8">
+          {/* Vertical Line for Timeline */}
+          <div className="absolute w-[2px] left-1/2 transform -translate-x-1/2 h-full bg-primaryColor"></div>
 
-        {/* SSC Section */}
-        <div className="mb-10 flex items-start w-full">
-          <div className="w-1/2 text-right">
-           
-            <h1 className="text-xl font-semibold">SSC In 2017</h1>
-            <p>Border Guard Public School, Jessore</p>
+          {/* JSC Section */}
+          <div className="mb-10 flex items-start w-full pt-2 ">
+            <div className="w-1/2"></div>
+            <div className="relative w-10 mt-1 flex justify-center ">
+              <FaCircle
+                className="text-white bg-primaryColor rounded-full p-[1px]"
+                size={17}
+              />
+            </div>
+            <div className="w-1/2 pl-0">
+              <h1 className="text-xl font-semibold">In 2014 (JSC)</h1>
+              <p>Junior School Certificate</p>
+              <p className="text-sm text-[#808080]">
+                Border Guard Public School, Jessore
+              </p>
+            </div>
           </div>
-          <div className="relative w-10 flex justify-center mt-1">
-          <FaCircle className="text-white bg-primaryColor rounded-full p-[1px]" size={17} />
+
+          {/* SSC Section */}
+          <div className="mb-10 flex items-start w-full">
+            <div className="w-1/2 text-right">
+              <h1 className="text-xl font-semibold">In 2017 (SSC)</h1>
+              <p>Senior School Certificate</p>
+              <p className="text-sm text-[#808080]">
+                Border Guard Public School, Jessore
+              </p>
+            </div>
+            <div className="relative w-10 flex justify-center mt-1">
+              <FaCircle
+                className="text-white bg-primaryColor rounded-full p-[1px]"
+                size={17}
+              />
+            </div>
+            <div className="w-1/2"></div>
           </div>
-          <div className="w-1/2">
+          {/* JSC Section */}
+          <div className="mb-10 flex items-start w-full pt-4">
+            <div className="w-1/2"></div>
+            <div className="relative w-10 mt-1 flex justify-center ">
+              <FaCircle
+                className="text-white bg-primaryColor rounded-full p-[1px]"
+                size={17}
+              />
+            </div>
+            <div className="w-1/2 pl-0">
+              <h1 className="text-xl font-semibold">In 2017-2021 (Diploma)</h1>
+              <p>Diploma in computer science and Engineering</p>
+              <p className="text-sm text-[#808080]">
+                Jessore Polytechnic instutite,Jessore
+              </p>
+            </div>
+          </div>
+
+          {/* SSC Section */}
+          <div className="mb-10 flex items-start w-full">
+            <div className="w-1/2 text-right">
+              <h1 className="text-xl font-semibold">In 2022-Present (BSC)</h1>
+              <p>Diploma in computer science and Engineering</p>
+              <p className="text-sm text-[#808080]">
+                Northen University Of Business and Technology,Khulna
+              </p>
+            </div>
+            <div className="relative w-10 flex justify-center mt-1">
+              <FaCircle
+                className="text-white bg-primaryColor rounded-full p-[1px]"
+                size={17}
+              />
+            </div>
+            <div className="w-1/2"></div>
           </div>
         </div>
-
-      
       </div>
     </div>
   );

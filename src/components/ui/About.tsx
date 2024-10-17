@@ -30,12 +30,12 @@ const About = () => {
         </div>
 
         <div className="text-center flex justify-center">
-          <a href="https://drive.google.com/uc?export=download&id=156ofdM6auEFMQlfQWClA1V7tNGCnWTC_">
+         
             <button className="py-2 px-5 bg-primaryColor hover:bg-[#2aca1f] text-xl font-semibold rounded-md mt-10 flex justify-center items-center gap-2">
               <FaDownload></FaDownload>
               <p>Resume</p>
             </button>
-          </a>
+          
         </div>
       </div>
       

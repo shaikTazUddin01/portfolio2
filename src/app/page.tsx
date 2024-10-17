@@ -14,12 +14,10 @@ export default function Home() {
   </div>
 
   <About/>
-  <div className="max-w-7xl mx-auto">
   <Experience/>
   <MySkills/>
   <Portfolio/>
   <Contact/>
-  </div>
 </div>
   );
 }
