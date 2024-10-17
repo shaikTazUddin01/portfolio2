@@ -9,7 +9,7 @@ const MySkills = () => {
       <div className="py-20 max-w-7xl mx-auto">
         {/* <h1 className="text-4xl text-center">My Skills</h1> */}
         <SectionTitle title=" My Skills" headerText="Skills" />
-        <div className="grid grid-cols-2 pt-10 gap-2 w-full px-10 ">
+        <div className="grid grid-cols-2 pt-6 gap-2 w-full px-10 uppercase">
           <div className="w-[95%]">
             <h1>HTML</h1>
             <Progress size="lg" aria-label="html" value={95} />

@@ -5,7 +5,7 @@ const Provider = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       <MainNav />
-      <div className="min-h-screen">{children}</div>
+      <div className="min-h-screen text-default-50">{children}</div>
       <div className="absolute bottom-2 flex justify-center w-full">
         {/* <FooterNav /> */}
       </div>

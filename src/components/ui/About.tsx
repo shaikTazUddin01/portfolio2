@@ -18,8 +18,8 @@ const About = () => {
            Hi, I&#39;m Shaik Taz Uddin, a passionate and dedicated web
             developer with 3 years of hands-on experience in building dynamic
             and responsive web applications. I specialize in modern web
-            technologies such as HTML, CSS, Tailwind, JavaScript, TypeScript,
-            React, Next.js, Node.js, Express.js, MongoDB, and Mongoose.
+            technologies such as <span className="text-primaryColor"> HTML, CSS, Tailwind, JavaScript, TypeScript,
+            React, Next.js, Node.js, Express.js, MongoDB, and Mongoose </span>.
             Currently, I&#39;m pursuing a Bachelor&#39;s degree in Computer Science and
             Engineering (CSE), which has further strengthened my problem-solving
             skills and deepened my understanding of cutting-edge technologies. I

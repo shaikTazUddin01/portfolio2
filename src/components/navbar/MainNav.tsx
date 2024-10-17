@@ -4,7 +4,7 @@ import {AcmeLogo} from "./AcmeLogo";
 export default function MainNav() {
   return (
     <Navbar maxWidth="xl" className="px-0" >
-      <NavbarBrand>
+      <NavbarBrand className="text-default-50">
         <AcmeLogo />
         <p className="font-bold text-inherit">ACME</p>
       </NavbarBrand>
@@ -14,7 +14,7 @@ export default function MainNav() {
       <NavbarContent justify="end">
        
         <NavbarItem>
-          <Button as={Link} className="text-white bg-[#3a3a3a88]" href="#" variant="bordered">
+          <Button as={Link} className="text-default-50  bg-[#3a3a3a88]" href="#" variant="bordered" >
             Contact
           </Button>
         </NavbarItem>

@@ -12,7 +12,7 @@ const Experience = () => {
           title="Educational Qualification"
         />
 
-        <div className="relative mt-8">
+        <div className="relative mt-6">
           {/* Vertical Line for Timeline */}
           <div className="absolute w-[2px] left-1/2 transform -translate-x-1/2 h-full bg-primaryColor"></div>
 
@@ -21,7 +21,7 @@ const Experience = () => {
             <div className="w-1/2"></div>
             <div className="relative w-10 mt-1 flex justify-center ">
               <FaCircle
-                className="text-white bg-primaryColor rounded-full p-[1px]"
+                className="text-default-50 bg-primaryColor rounded-full p-[1px]"
                 size={17}
               />
             </div>
@@ -45,7 +45,7 @@ const Experience = () => {
             </div>
             <div className="relative w-10 flex justify-center mt-1">
               <FaCircle
-                className="text-white bg-primaryColor rounded-full p-[1px]"
+                className="text-default-50 bg-primaryColor rounded-full p-[1px]"
                 size={17}
               />
             </div>
@@ -56,7 +56,7 @@ const Experience = () => {
             <div className="w-1/2"></div>
             <div className="relative w-10 mt-1 flex justify-center ">
               <FaCircle
-                className="text-white bg-primaryColor rounded-full p-[1px]"
+                className="text-default-50 bg-primaryColor rounded-full p-[1px]"
                 size={17}
               />
             </div>
@@ -80,7 +80,7 @@ const Experience = () => {
             </div>
             <div className="relative w-10 flex justify-center mt-1">
               <FaCircle
-                className="text-white bg-primaryColor rounded-full p-[1px]"
+                className="text-default-50 bg-primaryColor rounded-full p-[1px]"
                 size={17}
               />
             </div>
