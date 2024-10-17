@@ -13,8 +13,8 @@ export default function Home() {
   <div className="max-w-7xl mx-auto">
 
   <About/>
+  <Experience/>
   <MySkills/>
-  {/* <Experience/> */}
   <Portfolio/>
   <Contact/>
   </div>
