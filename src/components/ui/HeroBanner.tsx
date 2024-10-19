@@ -1,5 +1,5 @@
 "use client";
-import img from "@/assets/file (5).png";
+import img from "@/assets/taz.png";
 import Image from "next/image";
 import { BackgroundBeams } from "./Background";
 import HandleHashScroll from "@/utils/HandleHashScroll";

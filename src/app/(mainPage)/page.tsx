@@ -7,6 +7,7 @@ import MySkills from "@/components/ui/MySkills";
 import Portfolio from "@/components/ui/Portfolio";
 
 export default function Home() {
+  
   return (
     <div>
       {/* hero area */}

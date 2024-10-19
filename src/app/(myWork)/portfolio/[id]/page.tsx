@@ -2,8 +2,7 @@
 
 import { myPortfolios } from "@/constant/myPortfolio";
 import { TPortfolio } from "@/type/portfolio";
-import { Divider, Image } from "@nextui-org/react";
-import hero3 from "@/assets/hero-3.webp";
+import { Image } from "@nextui-org/react";
 import { useParams } from "next/navigation";
 import { FaCircle } from "react-icons/fa";
 import Link from "next/link";
@@ -20,11 +19,11 @@ const MyProject = () => {
   // console.log(portfolio);
   return (
     <div className="bg-[#151515]">
-      <div className="max-w-[1100px] mx-auto py-10 px-20 shadow-xl shadow-[#fddc7a17] z-20 bg-[#111111]">
-        <div className="flex justify-center ">
+      <div className="max-w-[1100px] mx-auto py-10 px-5 lg:px-20 shadow-xl shadow-[#fddc7a17] z-20 bg-[#111111]">
+        <div className="flex justify-center max-h-[400px] ">
           <Image
-            src={hero3.src}
-            className="max-w-full rounded-none object-contain border"
+            src={portfolio?.image}
+            className="w-full h-full rounded-md object-cover border"
             alt="img"
           />
         </div>
@@ -34,7 +33,7 @@ const MyProject = () => {
           </h1>
           <h1 className=" mt-2 text-justify">{portfolio?.details}</h1>
           {/* technology */}
-          <div className="mt-10 grid grid-cols-2 gap-5">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
             {/* frontend */}
             <div className="">
               <h1 className="text-xl">Frontend Technology:</h1>
@@ -69,16 +68,16 @@ const MyProject = () => {
             </div>
           </div>
           {/* project Feature and essintial links */}
-          <div className="mt-10 grid grid-cols-2 gap-5">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="">
               <h1 className="text-xl">Project Feature:</h1>
-              <ul className="pt-2">
+              <ul className="pt-5">
                 {portfolio?.feature?.map((item: string, idx: number) => (
-                  <li key={idx} className="flex items-center  gap-1">
+                  <li key={idx} className="flex items-start  gap-1 mb-2">
                     <span className="text-[10px]">
                       <FaCircle />
                     </span>
-                    <span>{item}</span>
+                    <span className="-mt-[6px]">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -143,15 +142,18 @@ const MyProject = () => {
               </div>
             </div>
           </div>
-         {/* admin login details */}
-         {
-            portfolio?.adminEmail && portfolio?.adminPassword &&
-         <div className="mt-5">
-            <h1 className="text-xl">Admin Login Information :</h1>
-           <p>Admin Email : <span>{portfolio?.adminEmail}</span></p>
-           <p>Admin Password : <span>{portfolio?.adminPassword}</span></p>
-         </div>
-         }
+          {/* admin login details */}
+          {portfolio?.adminEmail && portfolio?.adminPassword && (
+            <div className="mt-5">
+              <h1 className="text-xl">Admin Login Information :</h1>
+              <p>
+                Admin Email : <span>{portfolio?.adminEmail}</span>
+              </p>
+              <p>
+                Admin Password : <span>{portfolio?.adminPassword}</span>
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
