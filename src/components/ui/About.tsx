@@ -10,12 +10,12 @@ const About = () => {
   return (
     // <div className="h-full obje" style={{backgroundImage:`url(${bgLine.src})`}}>
     <div className=" py-20 relative" id="about">
-      <div className="w-full px-5 md:px-0 relative max-w-5xl mx-auto">
+      <div className="w-full px-5  relative max-w-5xl mx-auto">
         <div className="mb-5">
           <SectionTitle headerText={"About"} title={"About"}></SectionTitle>
         </div>
 
-        <div className="pr-5">
+        <div className="">
           <h1 className="text-justify">
             Hi, I&#39;m Shaik Taz Uddin, a passionate and dedicated web
             developer with 3 years of hands-on experience in building dynamic

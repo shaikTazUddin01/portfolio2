@@ -1,7 +1,7 @@
 import About from "@/components/ui/About";
 import Contact from "@/components/ui/Contact";
 import Experience from "@/components/ui/Education";
-import { Hero } from "@/components/ui/Hero";
+import { HeroBanner } from "@/components/ui/HeroBanner";
 // import HeroArea from "@/components/ui/HeroArea";
 import MySkills from "@/components/ui/MySkills";
 import Portfolio from "@/components/ui/Portfolio";
@@ -11,8 +11,7 @@ export default function Home() {
     <div>
       {/* hero area */}
       <div className="">
-        {/* <HeroArea/> */}
-        <Hero />
+        <HeroBanner />
       </div>
 
       <About />

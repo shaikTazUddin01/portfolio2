@@ -18,14 +18,14 @@ const Contact = () => {
           {/* <SectionTitle headerText="Contact" title="con"/> */}
           <SectionTitle headerText="Contact" title="Contect" />
 
-          <div className="grid grid-cols-3 gap-4 mt-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
             <div className="border rounded-xl h-20 flex justify-center items-center gap-1 text-xl bg-[#3e3d3d]">
               <span className="text-3xl">
                 <MdOutlineMail />
               </span>
               <span className="flex flex-col">
                 {/* <span>Email</span> */}
-                <Link href="mailto:tazahmedsoft@gmail.com" className="">
+                <Link href="mailto:tazahmedsoft@gmail.com" className="text-wrap">
                   tazahmedsoft@gmail.com
                 </Link>
               </span>
@@ -40,7 +40,7 @@ const Contact = () => {
                 </Link>
               </span>
             </div>
-            <div className="border rounded-xl h-20 flex justify-center items-center gap-1 text-xl bg-[#3e3d3d]">
+            <div className="md:col-span-2 lg:col-span-1 border rounded-xl h-20 flex justify-center items-center gap-1 text-xl bg-[#3e3d3d]">
               <span className="text-3xl">
                 <IoLocationOutline />
               </span>
