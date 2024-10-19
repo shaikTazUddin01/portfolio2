@@ -14,6 +14,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primaryColor:"var(--primaryColor)",
+        buttonBgColor:"#3e3d3d"
       },
     },
   },

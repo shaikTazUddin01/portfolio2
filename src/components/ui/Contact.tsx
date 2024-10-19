@@ -11,7 +11,7 @@ import bgLine from "@/assets/bg-line.jpg";
 
 const Contact = () => {
   return (
-    <div className="relative">
+    <div className="relative" id="contact">
       <div className="py-20 max-w-7xl mx-auto ">
         <div className="px-5 ">
           {/* <h1 className="text-4xl text-center mb-5">Contact</h1> */}

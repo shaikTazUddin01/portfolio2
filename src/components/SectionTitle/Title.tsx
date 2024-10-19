@@ -10,7 +10,7 @@ const SectionTitle = ({
   return (
     <div className="relative z-10 text-center">
       {headerText && (
-        <span className="text-8xl font-extrabold absolute header-text leading-4 tracking-widest left-1/2 transform top-1/2 -translate-x-1/2">
+        <span className="lg:text-8xl md:text-5xl text-4xl font-extrabold absolute header-text leading-4 tracking-widest left-1/2 transform  -translate-x-1/2 -top-[85%]">
           {headerText}
         </span>
       )}

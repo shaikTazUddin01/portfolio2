@@ -1,9 +1,10 @@
+"use client";
 import img from "@/assets/file (5).png";
 import { Button } from "@nextui-org/react";
 import Image from 'next/image';
-// import bg1 from '@/assets/project-bg.jpg'
+import { BackgroundBeams } from "../ui/Background";
 
-const HeroArea = () => {
+export function Hero() {
   return (
     <div className=" bg-[#151515] relative" id="home">
       <div className="flex h-auto justify-between items-center max-w-7xl mx-auto px-10 max-h-[650px] z-10">
@@ -25,13 +26,13 @@ const HeroArea = () => {
             Contact me
           </Button>
         </div>
-        <div className="w-[50%] flex justify-end">
+        <div className="w-[50%] flex justify-end z-10">
           <Image src={img.src} className="w-[82%]  " alt="image" width={500} height={500} />
         </div>
       </div>
       {/* <div className="absolute inset-0  bg-cover" style={{backgroundImage:`url(${bg1.src})`}}></div> */}
+    
+      <BackgroundBeams />
     </div>
   );
-};
-
-export default HeroArea;
+}
