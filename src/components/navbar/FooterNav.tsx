@@ -15,14 +15,14 @@ const FooterNav = () => {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        console.log("entries-->", entries);
+        // console.log("entries-->", entries);
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.4 }
     );
     // console.log(observer);
     sections.forEach((section) => {

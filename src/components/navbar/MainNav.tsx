@@ -1,7 +1,10 @@
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem} from "@nextui-org/react";
 import {AcmeLogo} from "./AcmeLogo";
+import HandleHashScroll from "@/utils/HandleHashScroll";
 
 export default function MainNav() {
+
+
   return (
     <Navbar maxWidth="xl" className="px-0" >
       <NavbarBrand className="text-default-50">
@@ -12,11 +15,8 @@ export default function MainNav() {
 
       </NavbarContent>
       <NavbarContent justify="end">
-       
         <NavbarItem>
-          <Button as={Link} className="text-default-50  bg-[#3a3a3a88]" href="#" variant="bordered" >
-            Contact
-          </Button>
+         <HandleHashScroll label="Contact Me" targetId="#contact"/>
         </NavbarItem>
       </NavbarContent>
     </Navbar>

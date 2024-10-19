@@ -12,25 +12,25 @@ import bgLine from "@/assets/bg-line.jpg";
 const Contact = () => {
   return (
     <div className="relative" id="contact">
-      <div className="py-20 max-w-7xl mx-auto ">
+      <div className="py-20 max-w-7xl mx-auto z-10">
         <div className="px-5 ">
-          {/* <h1 className="text-4xl text-center mb-5">Contact</h1> */}
-          {/* <SectionTitle headerText="Contact" title="con"/> */}
           <SectionTitle headerText="Contact" title="Contect" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
-            <div className="border rounded-xl h-20 flex justify-center items-center gap-1 text-xl bg-[#3e3d3d]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+            <div className="border rounded-xl h-20 flex justify-center items-center gap-1 text-xl bg-[#3e3d3d]   z-20">
               <span className="text-3xl">
                 <MdOutlineMail />
               </span>
               <span className="flex flex-col">
-                {/* <span>Email</span> */}
-                <Link href="mailto:tazahmedsoft@gmail.com" className="text-wrap">
+                <Link
+                  href="mailto:tazahmedsoft@gmail.com"
+                  className="text-wrap"
+                >
                   tazahmedsoft@gmail.com
                 </Link>
               </span>
             </div>
-            <div className="border rounded-xl h-20 flex justify-center items-center gap-1 text-xl bg-[#3e3d3d]">
+            <div className="border rounded-xl h-20 flex justify-center items-center gap-1 text-xl bg-[#3e3d3d]   z-20">
               <span className="text-3xl">
                 <LuPhone />
               </span>
@@ -40,7 +40,7 @@ const Contact = () => {
                 </Link>
               </span>
             </div>
-            <div className="md:col-span-2 lg:col-span-1 border rounded-xl h-20 flex justify-center items-center gap-1 text-xl bg-[#3e3d3d]">
+            <div className="md:col-span-2 lg:col-span-1 border rounded-xl h-20 flex justify-center items-center gap-1 text-xl bg-[#3e3d3d]   z-20">
               <span className="text-3xl">
                 <IoLocationOutline />
               </span>
@@ -54,8 +54,10 @@ const Contact = () => {
         </div>
         <div className="flex mt-8 items-center justify-center">
           <div className="bg-primaryColor h-[2px] flex-1"></div>
-          <div className="flex px-5 gap-2 text-2xl">
+          <div className="flex px-5 gap-2 text-2xl   z-20">
+            <Link href={"https://facebook.com"}>
             <FaFacebook />
+            </Link>
             <MdOutlineMail />
             <FaLinkedin />
             <FaGithub />
@@ -64,7 +66,7 @@ const Contact = () => {
         </div>
       </div>
       <div
-        className="absolute w-full h-full inset-0 bg-cover bg-center opacity-5"
+        className="absolute w-full h-full inset-0 bg-cover bg-center opacity-5 z-1"
         style={{ backgroundImage: `url(${bgLine.src})` }}
       ></div>
     </div>

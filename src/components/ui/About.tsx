@@ -10,7 +10,7 @@ const About = () => {
   return (
     // <div className="h-full obje" style={{backgroundImage:`url(${bgLine.src})`}}>
     <div className=" py-20 relative" id="about">
-      <div className="w-full px-5  relative max-w-5xl mx-auto">
+      <div className="w-full px-5  relative max-w-5xl mx-auto z-10">
         <div className="mb-5">
           <SectionTitle headerText={"About"} title={"About"}></SectionTitle>
         </div>
@@ -39,20 +39,19 @@ const About = () => {
 
         <div className="text-center flex justify-center">
           <Button
-            className="text-default-50 border-primaryColor bg-background/10 text-xl font-semibold
+            className="text-default-50  bg-background/10 font-semibold
             mt-8 flex justify-center items-center gap-2"
             variant="bordered"
           >
-            
-              <FaDownload></FaDownload>
-          
+            <FaDownload></FaDownload>
+
             <span>Resume</span>
           </Button>
         </div>
       </div>
 
       <div
-        className="absolute w-full h-full z-5 inset-0 bg-cover bg-center opacity-5"
+        className="absolute w-full h-full z-5 inset-0 bg-cover bg-center opacity-5 z-1"
         style={{ backgroundImage: `url(${bgLine.src})` }}
       ></div>
     </div>
