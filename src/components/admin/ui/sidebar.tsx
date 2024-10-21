@@ -30,6 +30,22 @@ const AdminSidebar = () => {
               Manage Work
             </li>
           </Link>
+          <Link href={"/admin/createBlog"}>
+            <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
+              <span className="text-2xl">
+                <MdOutlineManageAccounts />
+              </span>
+             Create Blog
+            </li>
+          </Link>
+          <Link href={"/admin/manageBlog"}>
+            <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
+              <span className="text-2xl">
+                <MdOutlineManageAccounts />
+              </span>
+              Manage Blog
+            </li>
+          </Link>
         </ul>
         <div>
         </div>
