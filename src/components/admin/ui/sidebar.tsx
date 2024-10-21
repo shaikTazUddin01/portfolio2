@@ -1,6 +1,9 @@
+'use client'
 import { AcmeLogo } from "@/components/navbar/AcmeLogo";
 import Link from "next/link";
 import { MdOutlineManageAccounts } from "react-icons/md";
+// import { Example } from "./animatedSIdebar/Example";
+// import "./style.css";
 
 const AdminSidebar = () => {
   return (
@@ -11,15 +14,17 @@ const AdminSidebar = () => {
       </div>
       <div className="mt-5">
         <ul>
-            <Link href={"/admin/myWorkManagement"}>
-          <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
+          <Link href={"/admin/myWorkManagement"}>
+            <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
               <span className="text-2xl">
                 <MdOutlineManageAccounts />
               </span>
-              MyWork Management
-          </li>
-            </Link>
+              Create Work
+            </li>
+          </Link>
         </ul>
+        <div>
+        </div>
       </div>
     </div>
   );
