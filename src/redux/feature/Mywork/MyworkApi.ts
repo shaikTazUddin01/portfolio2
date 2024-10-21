@@ -9,7 +9,36 @@ const myWorkApi = baseApi.injectEndpoints({
         body: data,
       }),
     }),
+    getMyWork: builder.query({
+      query: () => ({
+        url: "/myWork",
+        method: "GET",
+      
+      }),
+    }),
+    getSpecificWOrk: builder.query({
+      query: (id) => ({
+        url: `/myWork/${id}`,
+        method: "GET",
+        
+      }),
+    }),
+    DeleteMyWork: builder.mutation({
+      query: (id) => ({
+        url: `/myWork/delete/${id}`,
+        method: "DELETE",
+        
+      }),
+    }),
+    updateMyWork: builder.mutation({
+      query: ({id,data}) => ({
+        url: `/myWork/update/${id}`,
+        method: "PATCH",
+        body:data
+        
+      }),
+    }),
   }),
 });
 
-export const {useCreateMyWorkMutation}=myWorkApi
+export const {useCreateMyWorkMutation,useGetMyWorkQuery,useGetSpecificWOrkQuery,useDeleteMyWorkMutation,useUpdateMyWorkMutation}=myWorkApi

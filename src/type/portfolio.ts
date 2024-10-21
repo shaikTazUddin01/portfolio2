@@ -1,5 +1,5 @@
 export type TPortfolio = {
-  _id: string;
+  _id?: string;
   name: string;
   thumble: string;
   details: string;

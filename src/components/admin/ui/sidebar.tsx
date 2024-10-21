@@ -14,12 +14,20 @@ const AdminSidebar = () => {
       </div>
       <div className="mt-5">
         <ul>
-          <Link href={"/admin/myWorkManagement"}>
+          <Link href={"/admin/createMyWork"}>
             <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
               <span className="text-2xl">
                 <MdOutlineManageAccounts />
               </span>
               Create Work
+            </li>
+          </Link>
+          <Link href={"/admin/manageMyWork"}>
+            <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
+              <span className="text-2xl">
+                <MdOutlineManageAccounts />
+              </span>
+              Manage Work
             </li>
           </Link>
         </ul>
