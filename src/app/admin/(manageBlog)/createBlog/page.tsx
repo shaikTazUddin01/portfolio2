@@ -2,6 +2,7 @@
 import PForm from "@/components/Form/PFrom";
 import PInput from "@/components/Form/PInput";
 import { useCreateBlogMutation } from "@/redux/feature/blog/blogApi";
+import { IBlog } from "@/type/blog";
 import Debounce from "@/utils/Debounce";
 import QuillEditor from "@/utils/QuillEditor";
 import { Button } from "@nextui-org/react";
@@ -13,18 +14,18 @@ const CreateBlog = () => {
   const [description, setDiscription] = useState<string>("");
     const [createBlog,{isLoading}]=useCreateBlogMutation()
 
-  const blogDiscription=Debounce(description)
+  const blogDescription=Debounce(description)
 
   const handleSubmit: SubmitHandler<FieldValues> = async (data) => {
     console.log(data);
     const toastId=toast.loading("creating...")
     try {
 
-if (blogDiscription) {
-     const BlogData={
+if (blogDescription) {
+     const BlogData :IBlog={
         title:data?.title,
         image:data?.image,
-        discription:blogDiscription
+        description:blogDescription
      }
        const res =await createBlog(BlogData)
        console.log(res);
