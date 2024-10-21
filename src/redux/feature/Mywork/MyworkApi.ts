@@ -4,7 +4,7 @@ const myWorkApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     createMyWork: builder.mutation({
       query: (data) => ({
-        url: "/create",
+        url: "/myWork/create",
         method: "POST",
         body: data,
       }),

@@ -95,14 +95,14 @@ const MyProject = () => {
                   {portfolio?.livesiteClient}
                 </Link>
               </div>
-              {portfolio?.adminDashBoard && (
+              {portfolio?.adminDashBoardLink && (
                 <div className="flex gap-1 flex-col mt-2">
                   <h1 className="text-xl">Admin Dashboard : </h1>
                   <Link
-                    href={portfolio?.adminDashBoard as string}
+                    href={portfolio?.adminDashBoardLink as string}
                     className="hover:text-primaryColor"
                   >
-                    {portfolio?.adminDashBoard}
+                    {portfolio?.adminDashBoardLink}
                   </Link>
                 </div>
               )}

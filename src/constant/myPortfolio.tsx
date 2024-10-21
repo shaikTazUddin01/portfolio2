@@ -9,7 +9,7 @@ export const myPortfolios: TPortfolio[] = [
     thumble:
       "https://res.cloudinary.com/dfm6yapyj/image/upload/v1729341015/fitnessCare_qmz2hg.jpg",
     livesiteClient: "https://thunder-fitnesscare.netlify.app",
-    adminDashBoard: "https://thunder-fitnesscare.netlify.app/admin",
+    adminDashBoardLink: "https://thunder-fitnesscare.netlify.app/admin",
     livesiteServer: "https://fitness-equipment-server-silk.vercel.app",
     gitClient:
       "https://github.com/shaikTazUddin01/fitness-equipment-and-accessories-client",
@@ -135,7 +135,7 @@ export const myPortfolios: TPortfolio[] = [
       "Ant Design",
       "React Hook Form",
       "Redux Persist",
-      "AamerPay Payment Getway"
+      "AamerPay Payment Getway",
     ],
     useTechnlogyServer: [
       "Node.js",
@@ -160,8 +160,10 @@ export const myPortfolios: TPortfolio[] = [
     livesiteServer: "https://building-management-server-ten.vercel.app",
     details:
       "The Building Management Application streamlines the process of managing Apartment rentals and agreements. Users can easily browse available Apartment and submit agreement requests to rent a Apartment. Once a request is submitted, the admin can review and either approve or deny the request. Upon approval, the user becomes a member of the building.As a member, users can access their personal profile, where they can manage payments for their rented Apartment. The profile includes a dedicated Payment History page, allowing members to view all past transactions. If a membership is revoked by the admin, the user will no longer have access to their member profile or building-related services.",
-    gitClient: "https://github.com/shaikTazUddin01/building-management-system-client-a12",
-    gitServer: "https://github.com/shaikTazUddin01/building-management-system-server-a12",
+    gitClient:
+      "https://github.com/shaikTazUddin01/building-management-system-client-a12",
+    gitServer:
+      "https://github.com/shaikTazUddin01/building-management-system-server-a12",
     feature: [
       "User can create a accout",
       "User can log in",
@@ -181,7 +183,7 @@ export const myPortfolios: TPortfolio[] = [
       "swiper",
       "Axios",
       "Firebase",
-      "Stripe"
+      "Stripe",
     ],
     useTechnlogyServer: [
       "Node.js",
@@ -190,9 +192,9 @@ export const myPortfolios: TPortfolio[] = [
       "Jsonwebtoken",
       "cors",
       "dotenv",
-      "Stripe"
+      "Stripe",
     ],
-    adminEmail:"tazahmed12@gmail.com",
-    adminPassword:"123456"
+    adminEmail: "tazahmed12@gmail.com",
+    adminPassword: "123456",
   },
 ];
