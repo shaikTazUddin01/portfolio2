@@ -15,7 +15,7 @@ export default function MainNav() {
         <Link href={'/'}>
       <NavbarBrand className="text-default-50">
         <AcmeLogo />
-        <p className="font-bold text-inherit">ACME</p>
+        <p className="font-bold text-inherit">SKTU</p>
       </NavbarBrand>
         </Link>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">

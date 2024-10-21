@@ -55,12 +55,18 @@ const Contact = () => {
         <div className="flex mt-8 items-center justify-center">
           <div className="bg-primaryColor h-[2px] flex-1"></div>
           <div className="flex px-5 gap-2 text-2xl   z-20">
-            <Link href={"https://facebook.com"}>
+            <Link href="https://www.facebook.com/tazahmedcse">
             <FaFacebook />
             </Link>
+            <Link href={"mailto:tazahmedsoft@gmail.com"}>
             <MdOutlineMail />
+            </Link>
+            <Link href={"https://www.linkedin.com/in/shaik-taz-uddin-1a47682a0/"}>  
             <FaLinkedin />
+            </Link>
+            <Link href={"https://github.com/shaikTazUddin01"}>
             <FaGithub />
+            </Link>
           </div>
           <div className="bg-primaryColor h-[2px] flex-1"></div>
         </div>

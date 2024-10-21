@@ -145,7 +145,7 @@ const MyProject = () => {
           {/* admin login details */}
           {portfolio?.adminEmail && portfolio?.adminPassword && (
             <div className="mt-5">
-              <h1 className="text-xl">Admin Login Information :</h1>
+              <h1 className="text-xl mb-3">Admin Login Information :</h1>
               <p>
                 Admin Email : <span>{portfolio?.adminEmail}</span>
               </p>
