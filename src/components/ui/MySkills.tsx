@@ -1,22 +1,38 @@
-import { Progress } from "@nextui-org/react";
+"use client";
+import { Progress, Skeleton } from "@nextui-org/react";
 import React from "react";
 import bgLine from "@/assets/l-3.jpg";
 import SectionTitle from "../SectionTitle/Title";
-import { skills, TSkill } from "@/constant/skills";
+import { useGetskillQuery } from "@/redux/feature/skill/skillApi";
+import { ISkill } from "@/type/skill";
+// import { skills,  } from "@/constant/skills";
 
 const MySkills = () => {
+  const { data, isLoading } = useGetskillQuery(undefined);
+  const skills = data?.data;
   return (
     <div className="relative" id="skill">
       <div className="py-20 max-w-7xl mx-auto z-10">
         <SectionTitle title=" My Skills" headerText="Skills" />
         <div className="grid  grid-cols-1 md:grid-cols-2 pt-6 gap-5 md:gap-2 w-full px-5 lg:px-10 uppercase">
-          {skills.map((skill: TSkill) => (
-            <div className="w-full md:w-[95%]  z-20" key={skill?.skillName}>
-              <h1>{skill.skillName}</h1>
+          {isLoading &&
+            Array(12)
+              .fill(null)
+              ?.map((_, idx) => (
+                <div key={idx} className="space-y-2">
+
+                  <Skeleton className="w-[70px] h-4 rounded-xl bg-[#484848] border" />
+                  <Skeleton className="w-full md:w-[95%]  z-20 h-5 rounded-xl bg-[#484848 border" />
+                </div>
+              ))}
+
+          {skills?.map((skill: ISkill) => (
+            <div className="w-full md:w-[95%]  z-20" key={skill?._id}>
+              <h1>{skill.name}</h1>
               <Progress
                 size="lg"
-                aria-label={skill.skillName}
-                value={skill.value}
+                aria-label={skill.name}
+                value={skill.estimate}
                 classNames={{
                   track: " border border-default",
                   indicator: "bg-primaryColor",

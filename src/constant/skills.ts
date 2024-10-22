@@ -13,7 +13,4 @@ export const skills = [
     { skillName: "Mongoose", value: 92 },
   ];
 
-  export type TSkill = {
-    skillName: string;
-    value: number;
-  };
+  

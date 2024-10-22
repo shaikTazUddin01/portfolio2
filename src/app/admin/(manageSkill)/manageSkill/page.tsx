@@ -28,7 +28,7 @@ const ManageSkill = () => {
           <TableColumn>Estimate(%)</TableColumn>
           
         </TableHeader>
-        <TableBody emptyContent={"No rows to display."}>
+        <TableBody emptyContent={"No Skill Added Here."}>
           {/* loading state */}
           {isskillLoading
             ? Array(6)
