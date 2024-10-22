@@ -25,6 +25,7 @@ if (blogDescription) {
      const BlogData :IBlog={
         title:data?.title,
         image:data?.image,
+        tag:data?.tag,
         description:blogDescription
      }
        const res =await createBlog(BlogData)
@@ -52,6 +53,7 @@ if (blogDescription) {
 
             <PInput name="title" label="Blog Title" required />
             <PInput name="image" label="Image URL" required />
+            <PInput name="tag" label="Blog Tag" required />
             <QuillEditor setDiscription={setDiscription} />
             <Button type="submit" className="w-full" color="primary">
               Submit

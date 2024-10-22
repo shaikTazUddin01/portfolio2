@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { AcmeLogo } from "@/components/navbar/AcmeLogo";
 import Link from "next/link";
 import { MdOutlineManageAccounts } from "react-icons/md";
@@ -8,10 +8,12 @@ import { MdOutlineManageAccounts } from "react-icons/md";
 const AdminSidebar = () => {
   return (
     <div className="bg-default-200 min-h-screen p-5">
-      <div className="flex items-center ">
-        <AcmeLogo />
-        <p className="font-bold text-inherit">SKTU</p>
-      </div>
+        <div >
+      <Link href={"/"} className="flex items-center">
+          <AcmeLogo />
+          <p className="font-bold text-inherit">SKTU</p>
+      </Link>
+        </div>
       <div className="mt-5">
         <ul>
           <Link href={"/admin/createMyWork"}>
@@ -35,7 +37,7 @@ const AdminSidebar = () => {
               <span className="text-2xl">
                 <MdOutlineManageAccounts />
               </span>
-             Create Blog
+              Create Blog
             </li>
           </Link>
           <Link href={"/admin/manageBlog"}>
@@ -47,8 +49,7 @@ const AdminSidebar = () => {
             </li>
           </Link>
         </ul>
-        <div>
-        </div>
+        <div></div>
       </div>
     </div>
   );

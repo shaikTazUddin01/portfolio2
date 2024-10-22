@@ -5,12 +5,12 @@ import { Provider } from "react-redux";
 import { Toaster } from "sonner";
 const MainProvider = ({ children }: { children: ReactNode }) => {
   return (
-    <div>
       <Provider store={store}>
+    <div>
         {children}
-      </Provider>
       <Toaster/>
     </div>
+      </Provider>
   );
 };
 

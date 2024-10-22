@@ -12,28 +12,7 @@ import { toast } from "sonner";
 const CreateWorkPage = () => {
   const [createMyWork,{isLoading}]=useCreateMyWorkMutation()
 
-  const defaultvalue=
-  {
-    name: "Thunder Fitness Care",
-    image:
-      "https://res.cloudinary.com/dfm6yapyj/image/upload/v1729344469/fT_vkorv7.jpg",
-    thumble:
-      "https://res.cloudinary.com/dfm6yapyj/image/upload/v1729341015/fitnessCare_qmz2hg.jpg",
-    livesiteClient: "https://thunder-fitnesscare.netlify.app",
-    adminDashBoardLink: "https://thunder-fitnesscare.netlify.app/admin",
-    livesiteServer: "https://fitness-equipment-server-silk.vercel.app",
-    gitClient:
-      "https://github.com/shaikTazUddin01/fitness-equipment-and-accessories-client",
-    gitServer:
-      "https://github.com/shaikTazUddin01/fitness-equipment-and-accessories-server",
-    details:
-      "It is  a comprehensive e-commerce website for fitness equipment using React, Redux, Mongoose, and Express. This platform will offer a seamless shopping experience with features like product listings, detailed product pages, and a user-friendly cart system. Additionally, it will include robust product management capabilities for administrators and bonus features such as debounced search and page refresh warnings to enhance performance and user experience. Optional integration with Stripe will provide secure payment processing. This project aims to create a modern, efficient, and user-centric online store for fitness enthusiasts.",
-    feature: "jsdfkd,sdghjkdsfh",
-    useTechnlogyClient: "dsjkfhjk,shdafjkhdfsa",
-    useTechnlogyServer: "sdfjjkdslk,asdgjlkdfsj",
-    adminEmail: "taz@gmail.com",
-    adminPassword: "1234567",
-  }
+ 
 
   const handleSubmit: SubmitHandler<FieldValues> = async(data) => {
     const id=toast.loading("creating...")
@@ -80,7 +59,7 @@ const CreateWorkPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center w-full ">
       <div className="w-[80%] border shadow-xl p-5 rounded-xl my-10">
-        <PForm onSubmit={handleSubmit} defaultValues={defaultvalue}>
+        <PForm onSubmit={handleSubmit} >
           <div className="space-y-2">
             <h1 className="text-center text-xl mb-2">
               Create Your Work Details
