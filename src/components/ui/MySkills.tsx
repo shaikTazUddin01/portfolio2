@@ -19,9 +19,9 @@ const MySkills = () => {
             Array(12)
               .fill(null)
               ?.map((_, idx) => (
-                <div key={idx} className="space-y-2">
+                <div key={idx} className="space-y-1 mb-1">
 
-                  <Skeleton className="w-[70px] h-4 rounded-xl bg-[#484848] border" />
+                  <Skeleton className="w-[80px] h-[18px] rounded bg-[#484848] border" />
                   <Skeleton className="w-full md:w-[95%]  z-20 h-5 rounded-xl bg-[#484848 border" />
                 </div>
               ))}

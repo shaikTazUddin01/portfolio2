@@ -16,7 +16,7 @@ const myWorkApi = baseApi.injectEndpoints({
       
       }),
     }),
-    getSpecificWOrk: builder.query({
+    getSpecificWork: builder.query({
       query: (id) => ({
         url: `/myWork/${id}`,
         method: "GET",
@@ -41,4 +41,4 @@ const myWorkApi = baseApi.injectEndpoints({
   }),
 });
 
-export const {useCreateMyWorkMutation,useGetMyWorkQuery,useGetSpecificWOrkQuery,useDeleteMyWorkMutation,useUpdateMyWorkMutation}=myWorkApi
+export const {useCreateMyWorkMutation,useGetMyWorkQuery,useGetSpecificWorkQuery,useDeleteMyWorkMutation,useUpdateMyWorkMutation}=myWorkApi

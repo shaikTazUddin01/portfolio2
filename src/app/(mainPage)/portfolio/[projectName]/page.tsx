@@ -1,24 +1,28 @@
 "use client";
-
-import { myPortfolios } from "@/constant/myPortfolio";
 import { TPortfolio } from "@/type/portfolio";
 import { Image } from "@nextui-org/react";
 import { useParams } from "next/navigation";
 import { FaCircle } from "react-icons/fa";
 import Link from "next/link";
+import { useGetSpecificWorkQuery } from "@/redux/feature/Mywork/MyworkApi";
+import PortFolioDLoading from "@/components/ui/Loading/PortfolioDetailsLoading";
 // import { BackgroundBeams } from "@/components/ui/Background";
 
 const MyProject = () => {
-  const { id: title } = useParams();
-  const decodeUrl = decodeURIComponent(title as string);
+  const { projectName } = useParams();
 
-  // console.log(decodeUrl);
-  const portfolio = myPortfolios.find(
-    (portfolio: TPortfolio) => portfolio?.name == decodeUrl
-  );
-  // console.log(portfolio);
+  const decodeUrl = decodeURIComponent(projectName as unknown as string);
+
+  const { data, isLoading } = useGetSpecificWorkQuery(decodeUrl);
+
+  const portfolio: TPortfolio = data?.data;
+
+if(isLoading){
+  return <PortFolioDLoading/>
+}
+
   return (
-    <div className="bg-[#151515]">
+    <div className="bg-[#151515] min-h-screen text-default-100">
       <div className="max-w-[1100px] mx-auto py-10 px-5 lg:px-20 shadow-xl shadow-[#fddc7a17] z-20 bg-[#111111]">
         <div className="flex justify-center max-h-[400px] ">
           <Image
@@ -86,14 +90,19 @@ const MyProject = () => {
             {/* necessary link */}
             <div>
               {/* project links */}
+
               <div className="flex gap-1 flex-col">
                 <h1 className="text-xl">Frontend Live Link : </h1>
-                <Link
-                  href={portfolio?.livesiteClient as string}
-                  className="hover:text-primaryColor"
-                >
-                  {portfolio?.livesiteClient}
-                </Link>
+                {portfolio?.livesiteClient ? (
+                  <Link
+                    href={portfolio?.livesiteClient as string}
+                    className="hover:text-primaryColor"
+                  >
+                    {portfolio?.livesiteClient}
+                  </Link>
+                ) : (
+                  <p>No link avaliable</p>
+                )}
               </div>
               {portfolio?.adminDashBoardLink && (
                 <div className="flex gap-1 flex-col mt-2">
@@ -108,37 +117,49 @@ const MyProject = () => {
               )}
               <div className="flex  items-start flex-col mt-2">
                 <h1 className="flex-1 text-xl">Backend Live Link:</h1>
-                <p>
-                  <Link
-                    href={portfolio?.livesiteServer as string}
-                    className="hover:text-primaryColor"
-                  >
-                    {portfolio?.livesiteServer}
-                  </Link>
-                </p>
+                {portfolio?.livesiteServer ? (
+                  <p>
+                    <Link
+                      href={portfolio?.livesiteServer as string}
+                      className="hover:text-primaryColor"
+                    >
+                      {portfolio?.livesiteServer}
+                    </Link>
+                  </p>
+                ) : (
+                  <p>no link avaliable</p>
+                )}
               </div>
               {/* git hub links */}
               <div className="flex  items-start flex-col mt-2">
                 <h1 className="flex-1 text-xl">Frontend Github Link:</h1>
-                <p>
-                  <Link
-                    href={portfolio?.gitClient as string}
-                    className="hover:text-primaryColor"
-                  >
-                    {portfolio?.gitClient}
-                  </Link>
-                </p>
+                {portfolio?.gitClient ? (
+                  <p>
+                    <Link
+                      href={portfolio?.gitClient as string}
+                      className="hover:text-primaryColor"
+                    >
+                      {portfolio?.gitClient}
+                    </Link>
+                  </p>
+                ) : (
+                  <p>no link avaliable</p>
+                )}
               </div>
               <div className="flex  items-start flex-col mt-2">
                 <h1 className="flex-1 text-xl">Backend Github Link:</h1>
-                <p>
-                  <Link
-                    href={portfolio?.gitServer as string}
-                    className="hover:text-primaryColor"
-                  >
-                    {portfolio?.gitServer}
-                  </Link>
-                </p>
+                {portfolio?.gitServer ? (
+                  <p>
+                    <Link
+                      href={portfolio?.gitServer as string}
+                      className="hover:text-primaryColor"
+                    >
+                      {portfolio?.gitServer}
+                    </Link>
+                  </p>
+                ) : (
+                  <p>no link avaliable</p>
+                )}
               </div>
             </div>
           </div>

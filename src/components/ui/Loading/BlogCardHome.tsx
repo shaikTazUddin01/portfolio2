@@ -4,7 +4,7 @@ import React from "react";
 const BlogCardHome = () => {
   return (
     
-      <div className="bg-[#323232cc] h-[350px]  rounded-xl relative p-5 flex flex-col justify-between border border-primaryColor">
+      <div className="bg-[#242424dc] h-[350px]  rounded-xl relative p-5 flex flex-col justify-between border border-primaryColor">
         <div className="">
           
           <Skeleton className="h-7 w-[80px] rounded-md mb-4 bg-default-400" />

@@ -1,9 +1,8 @@
 "use client";
-// import p1 from "@/assets/p2.jpeg";
-// import { Image } from "@nextui-org/react";
+
 import SectionTitle from "../SectionTitle/Title";
 import { motion } from "framer-motion";
-import { myPortfolios } from "@/constant/myPortfolio";
+
 import { TPortfolio } from "@/type/portfolio";
 import Link from "next/link";
 import Image from "next/image";

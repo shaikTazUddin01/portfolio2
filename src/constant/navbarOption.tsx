@@ -4,14 +4,15 @@ import { HiOutlineAcademicCap } from "react-icons/hi";
 // import { DiCodepen } from "react-icons/di";
 import { PiBookOpenUser } from "react-icons/pi";
 import { AiOutlineWechatWork } from "react-icons/ai";
+import { ImBlog } from "react-icons/im";
 // import { FaCodepen } from "react-icons/fa";
   
 export const NavOptions = [
-  {
-    label: "Home",
-    href: "#home",
-    icon: <GoHome />,
-  },
+  // {
+  //   label: "Home",
+  //   href: "#home",
+  //   icon: <GoHome />,
+  // },
   {
     label: "About",
     href: "#about",
@@ -31,6 +32,11 @@ export const NavOptions = [
     label: "Portfolio",
     href: "#portfolio",
     icon: <PiBookOpenUser />,
+  },
+  {
+    label: "Blog",
+    href: "#blog",
+    icon: <ImBlog />,
   },
   {
     label: "Contact",

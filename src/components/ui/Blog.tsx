@@ -5,7 +5,7 @@ import { IBlog } from "@/type/blog";
 import { Button } from "@nextui-org/react";
 import stripHtml from "@/utils/stripHtml";
 import moment from 'moment'
-
+// import bgLine from "@/assets/bg-img.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -17,7 +17,8 @@ const Blog = () => {
   const { data: blogs, isLoading } = useGetBlogQuery(undefined);
   const myBlogs = blogs?.data;
   return (
-    <div className="py-20 max-w-7xl mx-auto px-5">
+    <div className="relative">
+    <div className="py-20 max-w-7xl mx-auto px-5" id="blog">
       <SectionTitle headerText="Blogs" title="Blogs" />
 
       {isLoading && (
@@ -26,7 +27,7 @@ const Blog = () => {
             .fill(null)
             ?.map((_, idx) => (
               <>
-                <BlogCardHome />
+                <BlogCardHome key={idx}/>
               </>
             ))}
         </div>
@@ -68,7 +69,7 @@ const Blog = () => {
                 backgroundPosition: "center",
               }}
             >
-              <div className="bg-[#141414b3] h-[350px] w-full rounded-xl relative p-5 flex flex-col justify-between">
+              <div className="bg-[#050505b3] h-[350px] w-full rounded-xl relative p-5 flex flex-col justify-between">
                 <div>
                   <Button
                     className="border text-default-100 text-sm font-semibold py-1 px-3"
@@ -84,7 +85,7 @@ const Blog = () => {
                   <p className="text-sm text-white mt-1">
                     {stripHtml(blog?.description,100)}
                     <Link href={`/blog/${blog?._id}`}>
-                    <span className="ml-1 font-semibold">more...</span>
+                    <span className="ml-1 font-semibold text-primaryColor">more...</span>
                     </Link>
                   </p>
                   <p className="text-white mt-2">{moment(blog?.createdAt).format('LL')}</p>
@@ -106,7 +107,11 @@ const Blog = () => {
         </Link>
       </div>
     </div>
-    // </div>
+    {/* <div
+    className="absolute w-full h-full inset-0 bg-cover bg-center opacity-5 z-1"
+    style={{ backgroundImage: `url(${bgLine.src})` }}
+  ></div> */}
+    </div>
   );
 };
 
