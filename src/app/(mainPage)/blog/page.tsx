@@ -11,7 +11,7 @@ const Blog = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-5 py-10">
-      <SectionTitle headerText="WelCome" title="Blogs" />
+      <SectionTitle headerText="Blogs" title="Blogs" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
         {isLoading &&

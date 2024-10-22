@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const BlogCard = ({ blog }: { blog: IBlog }) => {
   return (
-    <div className="bg-background">
+    <div className="bg-[#111111] rounded">
       <div
         className="object-cover h-[350px] w-full  bg-cover  bg-center shadow-xl"
         style={{
@@ -14,9 +14,9 @@ const BlogCard = ({ blog }: { blog: IBlog }) => {
         }}
       ></div>
 
-      <div className="text-default-900 p-5">
+      <div className="text-default-100 p-5">
         <h1 className="text-xl font-medium">{blog?.title}</h1>
-        <p className="text-[13px] text-default-600 pb-2 font-medium"># {blog?.tag}</p>
+        <p className="text-[13px] text-default-400 pb-2 font-medium"># {blog?.tag}</p>
         <p>
           {stripHtml(blog?.description, 150)}
           <Link href={`/blog/${blog?._id}`}>

@@ -3,8 +3,8 @@ import React from "react";
 
 const BlogCardLoading = () => {
   return (
-    <div className="bg-background">
-      <Skeleton className="w-full h-[350px]" />
+    <div className="bg-[#111111]">
+      <Skeleton className="w-full h-[350px] bg-default-900" />
       <div className="text-default-900 p-5">
         <Skeleton className="h-8 w-[70%] rounded-lg mb-2 bg-default-400" />
 

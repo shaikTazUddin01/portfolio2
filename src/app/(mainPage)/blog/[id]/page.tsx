@@ -13,8 +13,9 @@ const BlogDetails = () => {
   const blog = data?.data;
 
   return (
-   <div className="max-w-5xl mx-auto py-10">
-        <div className="bg-background">
+    <div className="bg-[#151515]">
+   <div className="max-w-6xl mx-auto px-5">
+        <div className="bg-[#111111] text-default-100 rounded px-2 md:px-20 py-10">
       <div
         className="object-cover h-[350px] w-full  bg-cover  bg-center shadow-xl"
         style={{
@@ -22,16 +23,18 @@ const BlogDetails = () => {
         }}
       ></div>
 
-      <div className="text-default-900 p-5">
-        <h1 className="text-xl font-medium">{blog?.title}</h1>
-        <p className="text-[13px] text-default-600 pb-2 font-medium">
+      <div className=" p-5">
+        <h1 className="text-xl md:text-2xl font-medium">{blog?.title}</h1>
+        <p className="text-[13px] text-default-400 pb-2 font-medium">
           # {blog?.tag}
         </p>
-        <p>{stripHtml(blog?.description)}</p>
-        <p className=" mt-2">{moment(blog?.createdAt).format("LL")}</p>
+        <p className="text-justify">{stripHtml(blog?.description)}</p>
+        <p className=" mt-2">Created At : <span className="text-sm text-default-400">{moment(blog?.createdAt).format("LL")}</span></p>
+        <p className=" mt-2  md:text-right">Written By : <span>Shaik Taz Uddin</span></p>
+
       </div>
     </div>
-
+    </div>
    </div>
 );
 };

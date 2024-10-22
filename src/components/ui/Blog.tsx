@@ -68,7 +68,7 @@ const Blog = () => {
                 backgroundPosition: "center",
               }}
             >
-              <div className="bg-[#0d0d0dcc] h-[350px] w-full rounded-xl relative p-5 flex flex-col justify-between">
+              <div className="bg-[#141414b3] h-[350px] w-full rounded-xl relative p-5 flex flex-col justify-between">
                 <div>
                   <Button
                     className="border text-default-100 text-sm font-semibold py-1 px-3"

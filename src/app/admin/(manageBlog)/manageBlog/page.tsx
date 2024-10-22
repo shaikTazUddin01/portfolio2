@@ -65,7 +65,7 @@ const ManageBlog = () => {
                     )}
                   </TableCell>
                   <TableCell >{blog?.title}</TableCell>
-                  <TableCell width={10}>
+                  <TableCell >
                     <div>
                     {stripHtml(blog?.description,100)}
                     </div>
