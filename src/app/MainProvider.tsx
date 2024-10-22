@@ -1,16 +1,19 @@
-'use client'
-import { store } from "@/redux/store";
+"use client";
+import { persistor, store } from "@/redux/store";
 import React, { ReactNode } from "react";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 import { Toaster } from "sonner";
 const MainProvider = ({ children }: { children: ReactNode }) => {
   return (
-      <Provider store={store}>
-    <div>
+    <Provider store={store}>
+       <PersistGate loading={null} persistor={persistor}>
+      <div>
         {children}
-      <Toaster/>
-    </div>
-      </Provider>
+        <Toaster />
+      </div>
+      </PersistGate>
+    </Provider>
   );
 };
 
