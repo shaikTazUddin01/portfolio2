@@ -1,3 +1,4 @@
+import FooterNav from "@/components/navbar/FooterNav";
 import About from "@/components/ui/About";
 import Blog from "@/components/ui/Blog";
 import Contact from "@/components/ui/Contact";
@@ -10,7 +11,7 @@ import Portfolio from "@/components/ui/Portfolio";
 export default function Home() {
   
   return (
-    <div>
+    <div className="text-default-100">
       {/* hero area */}
       <div className="">
         <HeroBanner />
@@ -22,6 +23,9 @@ export default function Home() {
       <Portfolio />
       <Blog/>
       <Contact />
+      <div className="fixed bottom-3 flex justify-center w-full z-50">
+        <FooterNav />
+      </div>
     </div>
   );
 }

@@ -82,8 +82,10 @@ const Blog = () => {
                     {blog?.title}
                   </h1>
                   <p className="text-sm text-white mt-1">
-                    {stripHtml(blog?.description, 35)}
+                    {stripHtml(blog?.description,100)}
+                    <Link href={`/blog/${blog?._id}`}>
                     <span className="ml-1 font-semibold">more...</span>
+                    </Link>
                   </p>
                   <p className="text-white mt-2">{moment(blog?.createdAt).format('LL')}</p>
                 </div>
@@ -95,6 +97,7 @@ const Blog = () => {
       <div className="flex justify-end">
         <Link href="/blog">
           <Button className="flex items-center gap-1 border-none bg-transparent text-default-100" >
+            
             <p className="text-lg">show all</p>
             <span className="text-2xl">
               <MdOutlineArrowRightAlt />
