@@ -40,13 +40,11 @@ export default function UpdateWork({ project }: { project:TPortfolio }) {
         adminPassword: data?.adminPassword || "",
       };
 
-        // console.log(updateProjectInFo);
-
       const res = (await UpdateWork({
         id: project?._id,
         data: updateProjectInFo,
       })) as any;
-    //   console.log(res);
+  
       if (res?.data) {
         toast.success(" Update success", { id: toastId });
         onOpenChange();

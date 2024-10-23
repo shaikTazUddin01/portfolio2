@@ -8,45 +8,47 @@ const blogApi = baseApi.injectEndpoints({
         method: "POST",
         body: data,
       }),
-      invalidatesTags:['blog']
+      invalidatesTags: ["blog"],
     }),
     getBlog: builder.query({
       query: () => ({
         url: "/blog/",
         method: "GET",
-    
       }),
-      providesTags:['blog']
+      providesTags: ["blog"],
     }),
     getSpecificBlog: builder.query({
-      query: ({id}) => ({
+      query: ({ id }) => ({
         url: `/blog/${id}`,
         method: "GET",
-    
       }),
-      providesTags:['blog']
-
+      providesTags: ["blog"],
     }),
     deleteBlog: builder.mutation({
       query: (id) => ({
         url: `/blog/delete/${id}`,
         method: "DELETE",
-    
       }),
-      invalidatesTags:["blog"]
+      invalidatesTags: ["blog"],
     }),
-   updateBlog: builder.mutation({
-      query: ({id,data}) => ({
-        url: `/blog/update/${id}`,
-        method: "UPDATE",
-        body:{data}
-    
-      }),
-      invalidatesTags:["blog"]
+    updateBlog: builder.mutation({
+      query: ({ id, data }) => {
+        // console.log(id, data); 
+        return {
+          url: `/blog/update/${id}`,
+          method: "PATCH", 
+          body: data,
+        };
+      },
+      invalidatesTags: ["blog"],
     }),
- 
-    
   }),
 });
 
-export const {useCreateBlogMutation,useGetBlogQuery,useGetSpecificBlogQuery,useDeleteBlogMutation,useUpdateBlogMutation}=blogApi
+export const {
+  useCreateBlogMutation,
+  useGetBlogQuery,
+  useGetSpecificBlogQuery,
+  useDeleteBlogMutation,
+  useUpdateBlogMutation,
+} = blogApi;

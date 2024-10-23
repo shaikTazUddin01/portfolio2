@@ -1,5 +1,6 @@
 "use client";
 
+import UPdateBlog from "@/components/admin/manageBlog/UpdateBlog";
 import { useDeleteBlogMutation, useGetBlogQuery } from "@/redux/feature/blog/blogApi";
 import { IBlog } from "@/type/blog";
 import stripHtml from "@/utils/stripHtml";
@@ -59,6 +60,7 @@ const handleDelete = async (id: string) => {
           <TableColumn>Blog No.</TableColumn>
           <TableColumn>Image</TableColumn>
           <TableColumn>Title</TableColumn>
+          <TableColumn>Tag</TableColumn>
           <TableColumn >Descriiption</TableColumn>
           <TableColumn>Action</TableColumn>
         </TableHeader>
@@ -69,7 +71,7 @@ const handleDelete = async (id: string) => {
                 .fill(null)
                 .map((_, idx) => (
                   <TableRow key={idx}>
-                    {Array(5)
+                    {Array(6)
                       .fill(null)
                       .map((_, idx) => (
                         <TableCell key={idx}>
@@ -96,6 +98,7 @@ const handleDelete = async (id: string) => {
                     )}
                   </TableCell>
                   <TableCell >{blog?.title}</TableCell>
+                  <TableCell >{blog?.tag}</TableCell>
                   <TableCell >
                     <div>
                     {stripHtml(blog?.description,100)}
@@ -104,13 +107,7 @@ const handleDelete = async (id: string) => {
                   {/* action */}
                   <TableCell>
                     <div className="flex justify-center items-center gap-2 text-xl ">
-                      <Button
-                        className="text-green-600 border-green-600 text-xl"
-                        variant="bordered"
-                        size="sm"
-                      >
-                        <RiEdit2Fill />
-                      </Button>
+                     <UPdateBlog blog={blog}/>
                       <Button
                         className="text-red-600 border-red-600 text-xl"
                         variant="bordered"
