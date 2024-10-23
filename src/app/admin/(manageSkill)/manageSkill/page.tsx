@@ -1,5 +1,6 @@
 "use client";
 
+import UPdateSkill from "@/components/admin/ui/manageSkill/UpdateSkill";
 import { useDeleteSkillMutation, useGetskillQuery } from "@/redux/feature/skill/skillApi";
 import { ISkill } from "@/type/skill";
 import {
@@ -50,7 +51,7 @@ const ManageSkill = () => {
 
   return (
     <div className="p-10">
-      <Table aria-label="Example static collection table">
+      <Table aria-label="Example static collection table" align="center">
         <TableHeader>
           <TableColumn>Skill No.</TableColumn>
           <TableColumn>Skill Name</TableColumn>
@@ -83,13 +84,7 @@ const ManageSkill = () => {
                   {/* action */}
                   <TableCell>
                     <div className="flex justify-center items-center gap-2 text-xl ">
-                      <Button
-                        className="text-green-600 border-green-600 text-xl"
-                        variant="bordered"
-                        size="sm"
-                      >
-                        <RiEdit2Fill />
-                      </Button>
+                     <UPdateSkill skill={skill}/>
                       <Button
                         className="text-red-600 border-red-600 text-xl"
                         variant="bordered"

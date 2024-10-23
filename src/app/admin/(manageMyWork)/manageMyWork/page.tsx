@@ -1,4 +1,5 @@
 "use client";
+import UpdateWork from "@/components/admin/manageWork/UpdateWork";
 import {
   useDeleteMyWorkMutation,
   useGetMyWorkQuery,
@@ -127,13 +128,7 @@ const ManageMyork = () => {
                   {/* action */}
                   <TableCell>
                     <div className="flex justify-center items-center gap-2 text-xl ">
-                      <Button
-                        className="text-green-600 border-green-600 text-xl"
-                        variant="bordered"
-                        size="sm"
-                      >
-                        <RiEdit2Fill />
-                      </Button>
+                      <UpdateWork project={myWork}/>
                       <Button
                         className="text-red-600 border-red-600 text-xl"
                         variant="bordered"

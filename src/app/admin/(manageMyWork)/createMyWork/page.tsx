@@ -56,7 +56,7 @@ const CreateWorkPage = () => {
             <h1 className="text-center text-xl mb-2">
               Create Your Work Details
             </h1>
-            {/* Required fields */}
+           
             <div className="flex items-center gap-2">
               <PInput name="name" label="Project Name" required />
               <PInput name="thumble" label="Thumbnail Image URL" required />
