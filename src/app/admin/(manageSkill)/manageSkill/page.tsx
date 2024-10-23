@@ -1,8 +1,9 @@
 "use client";
 
-import { useGetskillQuery } from "@/redux/feature/skill/skillApi";
+import { useDeleteSkillMutation, useGetskillQuery } from "@/redux/feature/skill/skillApi";
 import { ISkill } from "@/type/skill";
 import {
+  Button,
   Table,
   TableBody,
   TableCell,
@@ -10,14 +11,42 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
-
+import { MdDelete } from "react-icons/md";
+import { RiEdit2Fill } from "react-icons/ri";
+import { toast } from "sonner";
+import Swal from "sweetalert2";
 
 const ManageSkill = () => {
   const { data, isLoading: isskillLoading } = useGetskillQuery(undefined);
-  const skills= data?.data;
-  console.log(skills);
+  const skills = data?.data;
 
-
+  const [deleteSkill] = useDeleteSkillMutation();
+  const handleDelete = async (id: string) => {
+    try {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You wont to delete this skill",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          const toastId = toast.loading("deleting...");
+          // console.log(id);
+          const res = (await deleteSkill(id)) as any;
+          if (res?.data) {
+            toast.success("delete success", { id: toastId ,duration:500});
+          } else {
+            toast.error(res?.error?.data?.message, { id: toastId });
+          }
+        }
+      });
+    } catch (error: any) {
+      toast.error(error?.message);
+    }
+  };
 
   return (
     <div className="p-10">
@@ -26,7 +55,7 @@ const ManageSkill = () => {
           <TableColumn>Skill No.</TableColumn>
           <TableColumn>Skill Name</TableColumn>
           <TableColumn>Estimate(%)</TableColumn>
-          
+          <TableColumn>Action</TableColumn>
         </TableHeader>
         <TableBody emptyContent={"No Skill Added Here."}>
           {/* loading state */}
@@ -35,7 +64,7 @@ const ManageSkill = () => {
                 .fill(null)
                 .map((_, idx) => (
                   <TableRow key={idx}>
-                    {Array(3)
+                    {Array(4)
                       .fill(null)
                       .map((_, idx) => (
                         <TableCell key={idx}>
@@ -45,15 +74,32 @@ const ManageSkill = () => {
                   </TableRow>
                 ))
             : // show table data
-            skills?.map((skill: ISkill,idx:number) => (
+              skills?.map((skill: ISkill, idx: number) => (
                 <TableRow key={skill?._id}>
-                    <TableCell>
-                        {idx+1}
-                    </TableCell>
-                  
-                  <TableCell >{skill?.name}</TableCell>
-                  <TableCell >{skill?.estimate}</TableCell>
-                  
+                  <TableCell>{idx + 1}</TableCell>
+
+                  <TableCell>{skill?.name}</TableCell>
+                  <TableCell>{skill?.estimate}</TableCell>
+                  {/* action */}
+                  <TableCell>
+                    <div className="flex justify-center items-center gap-2 text-xl ">
+                      <Button
+                        className="text-green-600 border-green-600 text-xl"
+                        variant="bordered"
+                        size="sm"
+                      >
+                        <RiEdit2Fill />
+                      </Button>
+                      <Button
+                        className="text-red-600 border-red-600 text-xl"
+                        variant="bordered"
+                        size="sm"
+                        onClick={() => handleDelete(skill?._id as string)}
+                      >
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </TableCell>
                 </TableRow>
               ))}
         </TableBody>

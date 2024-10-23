@@ -7,35 +7,30 @@ import { Button } from "@nextui-org/react";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { toast } from "sonner";
 
-
 const CreateSkill = () => {
-  
-    const [CreateSkill,{isLoading}]=useCreateskillMutation()
-
+  const [CreateSkill, { isLoading }] = useCreateskillMutation();
 
   const handleSubmit: SubmitHandler<FieldValues> = async (data) => {
-
-    const toastId=toast.loading("creating...")
     try {
-        const skillInfo={
-            name:data?.name,
-            estimate:Number(data?.estimate)
-            
-        }
+      // if (data?.name && data?.estimate) {
+        const toastId = toast.loading("creating...");
         
-
-       const res =await CreateSkill(skillInfo)
-       console.log(res);
-       if (res?.data) {
-         toast.success("Added Your New skill",{id:toastId})
-       }else{
-         toast.error(res?.data?.error)
-       }
-
-
-
-    } catch (error :any) {
-      toast.error(error?.message)
+        const skillInfo = {
+          name: data?.name,
+          estimate: Number(data?.estimate),
+        };
+  
+        const res = (await CreateSkill(skillInfo)) as any;
+        
+        if (res?.data) {
+          toast.success("Added Your New skill", { id: toastId });
+        } else {
+          toast.error(res?.error?.data?.message, { id: toastId });
+        }
+      // }
+    } catch (error: any) {
+      console.log(error);
+      toast.error(error?.message);
     }
   };
 
@@ -48,8 +43,13 @@ const CreateSkill = () => {
             {/* Required fields */}
 
             <PInput name="name" label="Skill Name" required />
-            <PInput name="estimate" label="Estimate(%)" type="number" required />
-           
+            <PInput
+              name="estimate"
+              label="Estimate(%)"
+              type="number"
+              required
+            />
+
             <Button type="submit" className="w-full" color="primary">
               Submit
             </Button>

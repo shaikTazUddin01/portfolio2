@@ -9,13 +9,11 @@ import React from "react";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { toast } from "sonner";
 
-
 const CreateWorkPage = () => {
-  const [createMyWork,{isLoading}]=useCreateMyWorkMutation()
+  const [createMyWork, { isLoading }] = useCreateMyWorkMutation();
 
-
-  const handleSubmit: SubmitHandler<FieldValues> = async(data) => {
-    const id=toast.loading("creating...")
+  const handleSubmit: SubmitHandler<FieldValues> = async (data) => {
+    const toastId = toast.loading("creating...");
     try {
       const myWorkInFo = {
         name: data?.name,
@@ -37,29 +35,23 @@ const CreateWorkPage = () => {
         adminEmail: data?.adminEmail || "",
         adminPassword: data?.adminPassword || "",
       };
-     
-      const res =await createMyWork(myWorkInFo)
-      console.log(res);
+
+      const res = (await createMyWork(myWorkInFo)) as any;
+
       if (res?.data) {
-        toast.success("created success",{id:id})
-      }else{
-        toast.error(res?.data?.error)
+        toast.success("created success", { id: toastId });
+      } else {
+        toast.error(res?.error?.data?.message, { id: toastId });
       }
-  
-    } catch (error :any) {
-      toast.error(error?.message)
+    } catch (error: any) {
+      toast.error(error?.message);
     }
-
   };
-
-
- 
-
 
   return (
     <div className="min-h-screen flex items-center justify-center w-full ">
       <div className="w-[80%] border shadow-xl p-5 rounded-xl my-10">
-        <PForm onSubmit={handleSubmit} >
+        <PForm onSubmit={handleSubmit}>
           <div className="space-y-2">
             <h1 className="text-center text-xl mb-2">
               Create Your Work Details
@@ -91,11 +83,7 @@ const CreateWorkPage = () => {
             </div>
             <div className="flex items-center gap-2">
               <PInput name="adminEmail" label="Admin Email" />
-              <PInput
-                name="adminPassword"
-                label="Admin Password"
-                type="text"
-              />
+              <PInput name="adminPassword" label="Admin Password" type="text" />
             </div>
 
             {/* Array inputs for features and technologies */}

@@ -17,9 +17,9 @@ const CreateBlog = () => {
   const blogDescription=Debounce(description)
 
   const handleSubmit: SubmitHandler<FieldValues> = async (data) => {
-    console.log(data);
-    const toastId=toast.loading("creating...")
+    // console.log(data);
     try {
+      const toastId=toast.loading("creating...")
 
 if (blogDescription) {
      const BlogData :IBlog={
@@ -28,12 +28,12 @@ if (blogDescription) {
         tag:data?.tag,
         description:blogDescription
      }
-       const res =await createBlog(BlogData)
-       console.log(res);
+       const res =await createBlog(BlogData) as any
+      //  console.log(res);
        if (res?.data) {
          toast.success("created success",{id:toastId})
        }else{
-         toast.error(res?.data?.error)
+         toast.error(res?.error?.data?.error,{id:toastId})
        }
 }
 

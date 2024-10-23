@@ -7,6 +7,7 @@ import { authInfo } from "@/redux/feature/Auth/authslice";
 import { useAppDispatch } from "@/redux/hooks";
 import { Button } from "@nextui-org/react";
 import { jwtDecode } from "jwt-decode";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { toast } from "sonner";
@@ -14,27 +15,28 @@ import { toast } from "sonner";
 const Login = () => {
   const [login, { isLoading }] = useLoginMutation();
   const dispatch = useAppDispatch();
+  const router=useRouter()
   const handleLogin: SubmitHandler<FieldValues> = async (data) => {
-    const id = toast.loading("loading...");
+    const toastId = toast.loading("loading...");
     try {
       const loginInfo = {
         email: data?.email,
         password: data?.password,
       };
-      const res = await login(loginInfo);
-      console.log(res);
+      const res = await login(loginInfo) as any;
+      // console.log(res?.error?.data?.message);
       if (res?.data) {
         const { accessToken } = res?.data?.data;
-
+ router.push('/admin')
         if (accessToken) {
           const currentUser = await jwtDecode(accessToken);
           dispatch(authInfo({ data: currentUser, token:accessToken }));
           document.cookie = `accessToken=${accessToken};path=/;SameSite=Strict`;
         }
 
-        toast.success("login Success", { id: id });
+        toast.success("login Success", { id: toastId });
       } else {
-        toast.error(res?.data?.error);
+        toast.error(res?.error?.data?.message, { id: toastId });
       }
     } catch (error: any) {
       toast.error(error?.message);
@@ -53,7 +55,7 @@ const Login = () => {
             </div>
             <div className="mb-2">
               <PInput
-                name="current-password"
+                name="password"
                 label="Password"
                 type="password"
               />
