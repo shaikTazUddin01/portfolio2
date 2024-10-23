@@ -8,28 +8,46 @@ import Link from "next/link";
 import Image from "next/image";
 import { useGetMyWorkQuery } from "@/redux/feature/Mywork/MyworkApi";
 import PortCart from "./Loading/PortCart";
-import { Button } from "@nextui-org/react";
-import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Portfolio = () => {
   const { data, isLoading } = useGetMyWorkQuery(undefined);
 
   const myPortfolios = data?.data;
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="max-w-7xl mx-auto py-20 px-5" id="portfolio">
       {/* <h1 className="text-4xl text-center">PortFolio</h1> */}
+      <div data-aos="zoom-in" data-aos-duration="500">
       <SectionTitle headerText="PortFolio" title="my Portfolio" />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mt-6 ">
         {isLoading
           ? Array(4)
               .fill(null)
-              ?.map((_, idx) => <PortCart key={idx} />)
+              ?.map((_, idx) => {
+                return(
+                  <div key={idx}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="500"    
+                  >
+                    <PortCart />
+                  </div>
+                )
+              })
           : myPortfolios?.map((portfolio: TPortfolio) => {
               return (
                 <div
                   className="border border-primaryColor rounded overflow-hidden max-h-[400px]"
                   key={portfolio?._id}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="500"    
                 >
                   <motion.div
                     className="overflow-hidden h-full relative"

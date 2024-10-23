@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { FaDownload } from "react-icons/fa";
 
@@ -7,16 +7,22 @@ import bgLine from "@/assets/bg-line.jpg";
 import SectionTitle from "../SectionTitle/Title";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const About = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     // <div className="h-full obje" style={{backgroundImage:`url(${bgLine.src})`}}>
     <div className=" py-20 relative" id="about">
       <div className="w-full px-5  relative max-w-5xl mx-auto z-10">
-        <div className="mb-5">
+        <div className="mb-5" data-aos="zoom-in" data-aos-duration="500">
           <SectionTitle headerText={"About"} title={"About"}></SectionTitle>
         </div>
 
-        <div className="">
+        <div className="" data-aos="zoom-in-up" data-aos-duration="500">
           <h1 className="text-justify">
             Hi, I&#39;m Shaik Taz Uddin, a passionate and dedicated web
             developer with 3 years of hands-on experience in building dynamic
@@ -38,17 +44,26 @@ const About = () => {
           </h1>
         </div>
 
-        <div className="text-center flex justify-center">
-          <Link href={"https://drive.google.com/file/d/1meU8tXTYZybQY7HUTPHll4_vVDPiP6IM/view?usp=sharing"} target="_blank">
-          <Button
-            className="text-default-50  bg-background/10 font-semibold
-            mt-8 flex justify-center items-center gap-2"
-            variant="bordered"
+        <div
+          className="text-center flex justify-center"
+          data-aos="zoom-in-up"
+          data-aos-duration="500"
+        >
+          <Link
+            href={
+              "https://drive.google.com/file/d/1meU8tXTYZybQY7HUTPHll4_vVDPiP6IM/view?usp=sharing"
+            }
+            target="_blank"
           >
-            <FaDownload></FaDownload>
+            <Button
+              className="text-default-50  bg-background/10 font-semibold
+            mt-8 flex justify-center items-center gap-2"
+              variant="bordered"
+            >
+              <FaDownload></FaDownload>
 
-            <span>Resume</span>
-          </Button>
+              <span>Resume</span>
+            </Button>
           </Link>
         </div>
       </div>

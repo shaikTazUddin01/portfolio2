@@ -20,7 +20,7 @@ const BlogCard = ({ blog }: { blog: IBlog }) => {
         <p>
           {stripHtml(blog?.description, 150)}
           <Link href={`/blog/${blog?._id}`}>
-          <span className="ml-1 font-semibold">more...</span>
+          <span className="ml-1 font-semibold text-primaryColor">more...</span>
           </Link>
         </p>
         <p className=" mt-2">{moment(blog?.createdAt).format("LL")}</p>
