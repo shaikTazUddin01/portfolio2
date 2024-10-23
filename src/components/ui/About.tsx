@@ -6,6 +6,7 @@ import { FaDownload } from "react-icons/fa";
 import bgLine from "@/assets/bg-line.jpg";
 import SectionTitle from "../SectionTitle/Title";
 import { Button } from "@nextui-org/react";
+import Link from "next/link";
 const About = () => {
   return (
     // <div className="h-full obje" style={{backgroundImage:`url(${bgLine.src})`}}>
@@ -38,6 +39,7 @@ const About = () => {
         </div>
 
         <div className="text-center flex justify-center">
+          <Link href={"https://drive.google.com/file/d/1meU8tXTYZybQY7HUTPHll4_vVDPiP6IM/view?usp=sharing"} target="_blank">
           <Button
             className="text-default-50  bg-background/10 font-semibold
             mt-8 flex justify-center items-center gap-2"
@@ -47,6 +49,7 @@ const About = () => {
 
             <span>Resume</span>
           </Button>
+          </Link>
         </div>
       </div>
 

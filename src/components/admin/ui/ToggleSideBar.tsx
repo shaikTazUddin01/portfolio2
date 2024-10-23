@@ -1,10 +1,11 @@
 "use client";
+import { AdminNavOptions } from "@/constant/adminNavOptions";
 // import { AcmeLogof } from "@/components/navbar/AcmeLogo";
 import { toggleBtn } from "@/redux/feature/toggle/toggleSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import Link from "next/link";
 import { useEffect } from "react";
-import { MdOutlineManageAccounts } from "react-icons/md";
+
 
 const ToggleSidebar = () => {
   const dispatch = useAppDispatch();
@@ -34,56 +35,23 @@ const ToggleSidebar = () => {
 
         {/* Sidebar Links */}
         <div className="">
-          <ul className="space-y-4">
-            <li>
-              <Link href="/admin/createMyWork" onClick={handleCloseSidebar}>
+          <ul className="space-y-1">
+          {AdminNavOptions?.map((item) => {
+            return (
+              <li key={item?.label}>
+              <Link href={item?.href} onClick={handleCloseSidebar}>
                 <div className="flex items-center gap-2 hover:bg-default-700 p-3 rounded-md transition-colors">
-                  <MdOutlineManageAccounts className="text-2xl" />
-                  <span>Create Work</span>
+                  <span className="text-2xl">
+                  {item?.icon}
+                  </span>
+                  <span>{item?.label}</span>
                 </div>
               </Link>
             </li>
-            <li>
-              <Link href="/admin/manageMyWork" onClick={handleCloseSidebar}>
-                <div className="flex items-center gap-2 hover:bg-default-700 p-3 rounded-md transition-colors">
-                  <MdOutlineManageAccounts className="text-2xl" />
-                  <span>Manage Work</span>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link href="/admin/createBlog" onClick={handleCloseSidebar}>
-                <div className="flex items-center gap-2 hover:bg-default-700 p-3 rounded-md transition-colors">
-                  <MdOutlineManageAccounts className="text-2xl" />
-                  <span>Create Blog</span>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link href="/admin/manageBlog" onClick={handleCloseSidebar}>
-                <div className="flex items-center gap-2 hover:bg-default-700 p-3 rounded-md transition-colors">
-                  <MdOutlineManageAccounts className="text-2xl" />
-                  <span>Manage Blog</span>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link href="/admin/createSkill" onClick={handleCloseSidebar}>
-                <div className="flex items-center gap-2 hover:bg-default-700 p-3 rounded-md transition-colors">
-                  <MdOutlineManageAccounts className="text-2xl" />
-                  <span>Create Skill</span>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link href="/admin/manageSkill" onClick={handleCloseSidebar}>
-                <div className="flex items-center gap-2 hover:bg-default-700 p-3 rounded-md transition-colors">
-                  <MdOutlineManageAccounts className="text-2xl" />
-                  <span>Manage Skill</span>
-                </div>
-              </Link>
-            </li>
+            );
+          })}
             
+           
             
           </ul>
         </div>

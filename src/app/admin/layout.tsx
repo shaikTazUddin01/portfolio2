@@ -5,7 +5,7 @@ import React, { ReactNode } from "react";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div>
+    <div className="">
     
       <div className="visible lg:hidden">
         <AdminNavbar />
@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
       <div className="flex mx-auto bg-default-50">
       
-        <div className="hidden lg:flex lg:w-[20%] sticky top-0 h-screen overflow-auto">
+        <div className="hidden lg:flex lg:w-[18%] sticky top-0 h-screen overflow-auto">
           <AdminSidebar />
         </div>
 
@@ -22,7 +22,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <ToggleSidebar />
         </div>
      
-        <div className="min-h-screen w-full lg:w-[80%]">
+        <div className="min-h-screen w-full lg:w-[82%]">
           <div className="hidden lg:grid">
           <AdminNavbar/>
           </div>
