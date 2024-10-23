@@ -44,8 +44,8 @@ if (blogDescription) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center w-full ">
-      <div className="w-[60%] border shadow-xl p-5 rounded-xl my-10">
+    <div className="min-h-screen flex items-center justify-center w-full px-5">
+      <div className="w-full md:w-[60%] border shadow-xl p-5 rounded-xl my-10">
         <PForm onSubmit={handleSubmit}>
           <div className="space-y-2">
             <h1 className="text-center text-xl mb-2">Create Blog</h1>

@@ -54,7 +54,7 @@ const handleDelete = async (id: string) => {
 };
 
   return (
-    <div className="p-10">
+    <div className="p-5 md:p-10">
       <Table aria-label="Example static collection table ">
         <TableHeader>
           <TableColumn>Blog No.</TableColumn>

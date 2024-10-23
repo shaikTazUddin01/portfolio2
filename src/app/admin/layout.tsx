@@ -1,15 +1,36 @@
+import AdminNavbar from "@/components/admin/ui/AdminNavbar";
 import AdminSidebar from "@/components/admin/ui/sidebar";
+import ToggleSidebar from "@/components/admin/ui/ToggleSideBar";
 import React, { ReactNode } from "react";
 
-const layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="flex mx-auto bg-default-50">
-      <div className="w-[20%] sticky top-0 h-screen overflow-auto">
-        <AdminSidebar />
+    <div>
+    
+      <div className="visible lg:hidden">
+        <AdminNavbar />
       </div>
-      <div className="min-h-screen w-[80%]">{children}</div>
+
+      <div className="flex mx-auto bg-default-50">
+      
+        <div className="hidden lg:flex lg:w-[20%] sticky top-0 h-screen overflow-auto">
+          <AdminSidebar />
+        </div>
+
+       
+        <div className="flex lg:hidden absolute w-full z-50">
+          <ToggleSidebar />
+        </div>
+     
+        <div className="min-h-screen w-full lg:w-[80%]">
+          <div className="hidden lg:grid">
+          <AdminNavbar/>
+          </div>
+          {children}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default layout;
+export default Layout;

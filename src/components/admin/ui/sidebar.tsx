@@ -7,7 +7,7 @@ import { MdOutlineManageAccounts } from "react-icons/md";
 
 const AdminSidebar = () => {
   return (
-    <div className="bg-default-200 min-h-screen p-5">
+    <div className="bg-[#212020] min-h-screen p-5 w-full text-default-100">
         <div >
       <Link href={"/"} className="flex items-center">
           <AcmeLogo />
@@ -17,7 +17,7 @@ const AdminSidebar = () => {
       <div className="mt-5">
         <ul>
           <Link href={"/admin/createMyWork"}>
-            <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
+            <li className="flex items-center gap-1 hover:bg-default-700 py-2 rounded-md">
               <span className="text-2xl">
                 <MdOutlineManageAccounts />
               </span>
@@ -25,7 +25,7 @@ const AdminSidebar = () => {
             </li>
           </Link>
           <Link href={"/admin/manageMyWork"}>
-            <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
+            <li className="flex items-center gap-1 hover:bg-default-700 py-2 rounded-md">
               <span className="text-2xl">
                 <MdOutlineManageAccounts />
               </span>
@@ -33,7 +33,7 @@ const AdminSidebar = () => {
             </li>
           </Link>
           <Link href={"/admin/createBlog"}>
-            <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
+            <li className="flex items-center gap-1 hover:bg-default-700 py-2 rounded-md">
               <span className="text-2xl">
                 <MdOutlineManageAccounts />
               </span>
@@ -41,7 +41,7 @@ const AdminSidebar = () => {
             </li>
           </Link>
           <Link href={"/admin/manageBlog"}>
-            <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
+            <li className="flex items-center gap-1 hover:bg-default-700 py-2 rounded-md">
               <span className="text-2xl">
                 <MdOutlineManageAccounts />
               </span>
@@ -49,7 +49,7 @@ const AdminSidebar = () => {
             </li>
           </Link>
           <Link href={"/admin/createSkill"}>
-            <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
+            <li className="flex items-center gap-1 hover:bg-default-700 py-2 rounded-md">
               <span className="text-2xl">
                 <MdOutlineManageAccounts />
               </span>
@@ -57,7 +57,7 @@ const AdminSidebar = () => {
             </li>
           </Link>
           <Link href={"/admin/manageSkill"}>
-            <li className="flex items-center gap-1 hover:bg-default-300 py-2 rounded-md">
+            <li className="flex items-center gap-1 hover:bg-default-700 py-2 rounded-md">
               <span className="text-2xl">
                 <MdOutlineManageAccounts />
               </span>

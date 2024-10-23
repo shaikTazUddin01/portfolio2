@@ -50,7 +50,7 @@ const ManageSkill = () => {
   };
 
   return (
-    <div className="p-10">
+    <div className="p-5 md:p-10">
       <Table aria-label="Example static collection table" align="center">
         <TableHeader>
           <TableColumn>Skill No.</TableColumn>
